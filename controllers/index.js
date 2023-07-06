@@ -27,14 +27,24 @@ class Controller {
                             req.session.userRole = user.role
                             return res.redirect('/admin')
                         }
-                        return res.redirect('/login?error=invalid password')
+                        let error = 'invalid password'
+                        return res.redirect(`/login?error=${error}`)
                     }
-                } else return res.redirect('/login?error=invalid email')
+                } else{ 
+                    let error = 'invalid email'
+                    return res.redirect(`/login?error=${error}`)
+                }
             })
             .catch(err => console.log(err))
     }
     static showAdmin(req, res) {
         res.render('AdminDashboard')
+    }
+    static getLogOut(req, res){
+        req.session.destroy((err) => {
+            if(err) return console.log(err), '<<<';
+            res.redirect('/')
+        })
     }
 }
 
