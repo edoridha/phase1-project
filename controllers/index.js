@@ -65,6 +65,35 @@ class Controller {
             })
             .catch(err => console.log(err))
     }
+    static postCourse(req, res) {
+        let {title, url, CourseCategoryId } = req.body
+        Course.create({title, url, CourseCategoryId })
+        .then(()=> res.redirect('/admin'))
+        .catch(err => console.log(err))
+    }
+    static editForm(res, req){
+        let id = req.params.id
+        Course.findOne({where: {id: id}})
+        .then(data => res.render('EditForm', {data}))
+        .catch(err => console.log(err))
+    }
+    static postEdit(req, res) {
+        let id = req.params.id
+        let {title, url, CourseCategoryId } = req.body
+        Course.update({title, url, CourseCategoryId }, {
+            where: {id: id}
+        })
+        .then(()=> res.redirect('/admin'))
+        .catch(err => console.log(err))
+    }
+    static delete (req, res) {
+        let id = req.params.id
+        Course.destroy({
+            where: {id: id}
+        })
+        .then(()=> res.redirect('/admin'))
+        .catch(err => console.log(err))
+    }
 }
 
 module.exports = Controller;

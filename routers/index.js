@@ -24,12 +24,14 @@ router.get('/register', (req, res) => res.render('Register'))
 router.post('/register', Controller.postRegister)
 
 router.get('/admin', admin, Controller.showAdmin)
-router.get('/admin/addCource', admin, (req, res) => res.render('AddForm'))
-router.post('/admin/addCourse', admin)
-router.get('/admin/edit/:id', admin)
-router.post('/admin/edit/:id', admin)
-router.get('/admin/delete/:id', admin)
+router.get('/admin/addCourse', admin, (req, res) => res.render('AddForm'))
+router.post('/admin/addCourse', admin, Controller.postCourse)
+router.get('/admin/edit/:id', admin, Controller.editForm)
+router.post('/admin/edit/:id', admin, Controller.postEdit)
+router.get('/admin/delete/:id', admin, Controller.delete)
 router.get('/logout', admin, Controller.getLogOut)
 
 router.get('/user', user, (req, res) => res.render('User'))
+router.get('/logutUser', user, res.redirect('/'))
+
 module.exports = router;

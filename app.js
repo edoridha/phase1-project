@@ -9,7 +9,11 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
  
-app.use(session({secret: 'secret-key',}))
+app.use(session({
+    secret: 'secret-key',
+    resave: false, 
+    saveUninitialized: false
+  }))
 app.use(require('./routers'));
 
 
