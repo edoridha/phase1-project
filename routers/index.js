@@ -21,7 +21,7 @@ router.get('/', Controller.home)
 router.get('/login', Controller.login)
 router.post('/login', Controller.postLogin)
 router.get('/register', (req, res) => res.render('Register'))
-router.post('/register')
+router.post('/register', Controller.postRegister)
 
 router.get('/admin', admin, Controller.showAdmin)
 router.get('/admin/addCource', admin)
