@@ -2,21 +2,25 @@
   {
     "title": "Postgres Basic",
     "url": "https://youtu.be/GiT0Dm8l_Ts",
+    "UserId": 1,
     "CategoryId": 1
   },
   {
     "title": "Postgres Add Column",
     "url": "https://youtu.be/vnnh5njgqlU",
+    "UserId": 1,
     "CategoryId": 1
   },
   {
     "title": "MVC making",
     "url": "https://youtu.be/bQuBlR0T5cc",
+    "UserId": 1,
     "CategoryId": 2
   },
   {
     "title": "Express Js",
     "url": "https://youtu.be/0QRFOsrBtXw",
+    "UserId": 1,
     "CategoryId": 3
   }
 
