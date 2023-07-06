@@ -1,16 +1,19 @@
 [  {
     "firstName": "Umar",
     "lastName": "Sari",
-    "age": 23
+    "age": 23,
+    "UserId": 1 
   },
   {
     "firstName": "Sandi",
     "lastName": "ada",
-    "age": 29
+    "age": 29,
+    "UserId": 1 
   },
   {
     "firstName": "puji",
     "lastName": "seire",
-    "age": 18
+    "age": 18,
+    "UserId": 1 
   }
 ]
