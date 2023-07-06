@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsToMany(models.User, {
+        through: models.CourseCategory
+      })
     }
   }
   Course.init({
@@ -38,19 +40,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    UserId:  {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        notEmpty: {
-          msg: `UserId is Require`
-        },
-        notNull: {
-          msg: `UserId is Require`
-        }
-      }
-    },
-    CategoryId: {
+    CourseCategoryId:  {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
