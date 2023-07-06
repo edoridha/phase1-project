@@ -1,9 +1,10 @@
-const User = require('../models')
+const {User,Profile, CourseCategory, Course, Category} = require('../models')
 const bcrypt = require('bcryptjs');
 
 class Controller {
 
     static home(req, res) {
+        
         res.render('Home')
     }
     static login(req, res) {
@@ -16,7 +17,7 @@ class Controller {
                 if (user) {
                     if (user.role == 'Admin') {
                         const isValidPass = bcrypt.compareSync(password, user.password)
-                        if (isValidPass) return res.redirect('AdminDashboard')
+                        if (isValidPass) return res.render('AdminDashboard')
                         return res.redirect('/login?error=invalid password')
                     } else {
                         const isValidPass = bcrypt.compareSync(password, user.password)
