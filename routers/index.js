@@ -31,5 +31,5 @@ router.post('/admin/edit/:id', admin)
 router.get('/admin/delete/:id', admin)
 router.get('/logout', admin, Controller.getLogOut)
 
-router.get('/user', user)
+router.get('/user', user, (req, res) => res.render('User'))
 module.exports = router;

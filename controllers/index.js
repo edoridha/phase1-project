@@ -29,7 +29,7 @@ class Controller {
                         const isValidPass = bcrypt.compareSync(password, user.password)
                         if (isValidPass) {
                             req.session.userRole = user.role
-                            return res.redirect('/admin')
+                            return res.redirect('/user')
                         }
                         let error = 'invalid password'
                         return res.redirect(`/login?error=${error}`)
