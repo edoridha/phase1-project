@@ -1,0 +1,17 @@
+[
+  {
+    "email": "hasan@mail.com",
+    "password": "asdfg123",
+    "role": "user"
+  },
+  {
+    "email": "bakrie@mail.com",
+    "password": "qwert123",
+    "role": "user"
+  },
+  {
+    "email": "anda@mail.com",
+    "password": "fghjk342",
+    "role": "user"
+  }
+]
