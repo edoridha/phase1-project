@@ -1,19 +1,23 @@
 'use strict';
 const bcrypt = require('bcryptjs');
 const fs = require('fs')
+const data = JSON.parse(fs.readFileSync('./data/admin.json', 'utf-8'))
+      data.map( (e) => {
+          e.createdAt = new Date()
+          e.updatedAt = new Date()
+          e.password =  bcrypt.hashSync(`${e.password}`, 10)
+          return e
+      })
+        
+        console.log(data);
+    
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    let data = JSON.parse(fs.readFileSync('./admin.json'))
-    data = await Promise.all(
-      data.map(async (e) => {
-        e.createdAt = new Date()
-        e.updatedAt = new Date()
-        e.password = await bcrypt.hash(`${e.password}`, 10)
-        return e
-      })
-    )
+    
+    
+    console.log(data)
     await queryInterface.bulkInsert('Users', data)
   },
 

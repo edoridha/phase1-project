@@ -14,10 +14,54 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Course.init({
-    title: DataTypes.STRING,
-    url: DataTypes.STRING,
-    UserId: DataTypes.INTEGER,
-    CategoryId: DataTypes.INTEGER
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `Title is Require`
+        },
+        notNull: {
+          msg: `Title is Require`
+        }
+      }
+    },
+    url:  {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `url is Require`
+        },
+        notNull: {
+          msg: `url is Require`
+        }
+      }
+    },
+    UserId:  {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `UserId is Require`
+        },
+        notNull: {
+          msg: `UserId is Require`
+        }
+      }
+    },
+    CategoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `UserId is Require`
+        },
+        notNull: {
+          msg: `UserId is Require`
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Course',
