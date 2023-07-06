@@ -94,6 +94,33 @@ class Controller {
         .then(()=> res.redirect('/admin'))
         .catch(err => console.log(err))
     }
+
+    static userHome(req, res) {
+        Course.findAll({
+            // include: Category
+        }).then((data) => {
+            // res.send(data)
+            res.render('User',{data})
+        }).catch((err) => {
+            res.send(err)
+        })
+    }
+
+    static userProfile(req, res) {
+        console.log()
+        Profile
+            .findOne({
+            where: {
+            UserId:"5" //perlu dapet user email
+            }})
+            .then((data) => {
+            res.send(data)
+            })
+            .catch((err) => {
+                res.send(err)
+            })
+    }
+
 }
 
 module.exports = Controller;

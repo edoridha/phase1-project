@@ -31,7 +31,10 @@ router.post('/admin/edit/:id', admin, Controller.postEdit)
 router.get('/admin/delete/:id', admin, Controller.delete)
 router.get('/logout', admin, Controller.getLogOut)
 
-router.get('/user', user, (req, res) => res.render('User'))
+router.get('/user', user, Controller.userHome)
+router.get('/user/profile', user, Controller.userProfile)
+router.get('/user', user, Controller.userHome)
+
 router.get('/logutUser', user, (req,res)=> res.redirect('/'))
 
 module.exports = router;

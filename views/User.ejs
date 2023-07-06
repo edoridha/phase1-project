@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+    </style>
 </head>
 <body>
-    <a href="/logutUser"><button>Log Out</button></a>  
+    <a href="/logutUser"><button>Log Out</button></a>
+    <div>User Home</div>
+    
+
+    <% data.forEach((e) => { %>
+        <div>
+            <h1>
+                <%= e.title %>
+            </h1>
+
+            <p>
+                <%= e.url %>
+            </p>
+        </div>
+        
+    <% }) %>
+
+    </div>
+    
 </body>
 </html>
