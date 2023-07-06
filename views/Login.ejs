@@ -6,6 +6,10 @@
     <title>Log in</title>
 </head>
 <body>
+    <% let error %>
+    <% if (error){ %>
+<p style="color: red;"><%= error %></p>
+    <% } %>
     <form action="/login" method="post">
         <label for="email">Email</label>
         <input type="text" name="email">
