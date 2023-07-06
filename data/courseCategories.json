@@ -1,14 +1,15 @@
 [
     {
-        "UserId":"2",
-        "CategoryId":"1"
+        "UserId":2,
+        "CategoryId":1
+        
     },
     {
-        "UserId":"1",
-        "CategoryId":"1"
+        "UserId":1,
+        "CategoryId":1
     },
     {
-        "UserId":"2",
-        "CategoryId":"3"
+        "UserId":1,
+        "CategoryId":2
     }
 ]

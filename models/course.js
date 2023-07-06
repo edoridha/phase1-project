@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsToMany(models.User, {
         through: models.CourseCategory
+        
+      })
+      this.belongsToMany(models.Category, {
+        through:models.CourseCategory
       })
     }
   }
@@ -51,8 +55,34 @@ module.exports = (sequelize, DataTypes) => {
           msg: `UserId is Require`
         }
       }
-    }
-  }, {
+    },
+    CourseCategoryUserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `UserId is Require`
+        },
+        notNull: {
+          msg: `UserId is Require`
+        }
+      }
+    },
+    CourseCategoryCategoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `UserId is Require`
+        },
+        notNull: {
+          msg: `UserId is Require`
+        }
+      }
+    },
+  },
+  
+    {
     sequelize,
     modelName: 'Course',
   });

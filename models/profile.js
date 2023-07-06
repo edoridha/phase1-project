@@ -5,6 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Profile extends Model {
 
+    
+
     static associate(models) {
       this.belongsTo(models.User)
     }
@@ -32,6 +34,12 @@ module.exports = (sequelize, DataTypes) => {
         notNull: {
           msg: `Last Name is Require`
         }
+      }
+    },
+    fullName: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return `${this.firstName} ${this.lastName}`
       }
     },
     age: {

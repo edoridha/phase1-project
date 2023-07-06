@@ -32,5 +32,6 @@ router.get('/admin/delete/:id', admin)
 router.get('/logout', admin, Controller.getLogOut)
 
 
+
 router.get('/user', user)
 module.exports = router;

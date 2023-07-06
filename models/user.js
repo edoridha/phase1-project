@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(models.Course,{
         through: models.CourseCategory
       })
+      this.belongsToMany(models.Category, {
+        through: models.CourseCategory
+      })
     }
   }
   User.init({

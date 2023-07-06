@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: `Email is Required`
         }
       }
-    }
+    },
+    CourseId: DataTypes.INTEGER
     
   }, {
     sequelize,

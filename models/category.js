@@ -7,6 +7,13 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       this.hasMany(models.CourseCategory)
+
+      this.belongsToMany(models.Course, {
+          through:models.CourseCategory
+      })
+      this.belongsToMany(models.User, {
+        through: models.CourseCategory
+      })
     }
   }
   Category.init({
