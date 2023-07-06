@@ -24,7 +24,7 @@ router.get('/register', (req, res) => res.render('Register'))
 router.post('/register', Controller.postRegister)
 
 router.get('/admin', admin, Controller.showAdmin)
-router.get('/admin/addCource', admin)
+router.get('/admin/addCource', admin, (req, res) => res.render('AddForm'))
 router.post('/admin/addCourse', admin)
 router.get('/admin/edit/:id', admin)
 router.post('/admin/edit/:id', admin)
