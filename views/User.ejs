@@ -1,32 +1,195 @@
+
+    
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar{
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .nav-content{
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            width: 80%;
+            
+        }
+
+        button{
+            background-color: aliceblue;
+            margin: 0;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            margin-right: 20px;
+            margin-left: 20px;
+
+        }
+
+        button:hover{
+            background-color: rgb(123, 255, 0);
+        }
+
+        button.active, button.active a{
+            background-color: blueviolet;
+            color: white;
+        }
+        .wrap{
+            display: block;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        h1, a{
+            text-decoration: none;
+            color: blueviolet;
+            display: block;
+            padding: 5px;
+            font-weight: bolder;
+            font-size: 1.5em;
+        }
+
+        .content{
+            display: block;
+        }
+        .container{
+            float: inline-start;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .items{
+            
+            width: 100%;
+            height: 700px;
+            padding:20px;
+            margin: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: 5px;
+
+        }
+
+        .items-s{
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            display: blo;
+            justify-content: flex-start;
+            
+        }
+
+        .search{
+            width: 95%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .container-s{
+            display: flex;
+            gap: 8px;
+        }
+
+        .cont{
+            padding-top: 5px;
+        }
+
+        .card{
+            padding: 5px;
+            height: 80%;
+            width: 100%;
+        }
+        
+        img {
+            border-radius: 5px 5px 0 0;
+            
+        }
+        p, h4{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .msg{
+            display: flex;
+            justify-content: space-between;
+            border-radius: 5px;
+            padding: 5px;
+            color: white;
+            font-weight: bolder;
+            margin: 20px;
+        }
+        
 
     </style>
 </head>
 <body>
-    <a href="/logutUser"><button>Log Out</button></a>
-    <div>User Home</div>
-    
-
-    <% data.forEach((e) => { %>
-        <div>
-            <h1>
-                <%= e.title %>
-            </h1>
-
-            <p>
-                <%= e.url %>
-            </p>
+    <div class="nav-bar">
+        <div class="nav-content">
+            <button class="active">
+                <a  href="/">Go Learn</a>
+            </button>
+            <button>
+                <a href="">Category</a>
+            </button>
         </div>
-        
-    <% }) %>
-
     </div>
-    
+    <div class="wrap">
+        <div>
+            <h1 style="margin-left: 30px;">HOME</h1>
+        </div>
+        <div class="search">
+            <form class="container-s" action="/" method="get">
+                <input class="items-s" type="text" name="searchTitle" placeholder="Search By Title">
+                <input class="items-s" type="text" name="searchArtist" placeholder="Search By Artist">
+                <button style="width: 20%; background-color: blueviolet; color: white;">Search</button>
+            </form>
+        </div>
+       
+        <button><a href="/logutUser">Log Out</a></button>
+        <div class="content">
+            <div class="container">
+                <% data.forEach(el => { %>
+                    <div class="items">
+                        <div class="card">
+                            <iframe class="img" width="100%" height="100%" src="<%= el.url %>">
+                            </iframe>
+                            <embed class="cont" src="<%= el.url %>" type="video" style="width:100%">
+                                <p><%= el.url %></p>
+
+                            <div class="cont">
+                                <h4><b><%= el.title %></b></h4> 
+                            </div>
+                            <div class="cont">
+                                <p>category</p> 
+                            </div>
+                            <div class="cont">
+                                <button><a href=""></a></button>
+                                <button><a href=""></a></button>
+                                <br>    
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+        <br><br>
+    </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 [
   {
     "title": "Postgres Basic",
-    "url": "https://youtu.be/GiT0Dm8l_Ts",
+    "url": "https://www.youtube.com/embed/GiT0Dm8l_Ts",
     "CourseCategoryId": 1,
     "CourseCategoryUserId": 2,
     "CourseCategoryCategoryId": 2
@@ -9,24 +9,28 @@
   },
   {
     "title": "Postgres Add Column",
-    "url": "https://youtu.be/vnnh5njgqlU",
+    "url": "https://www.youtube.com/embed/vnnh5njgqlU",
     "CourseCategoryId": 1,
     "CourseCategoryUserId": 1,
     "CourseCategoryCategoryId": 1
   },
   {
     "title": "MVC making",
-    "url": "https://youtu.be/bQuBlR0T5cc",
+    "url": "https://www.youtube.com/embed/bQuBlR0T5cc",
     "CourseCategoryId": 1,
     "CourseCategoryUserId": 2,
     "CourseCategoryCategoryId": 3
   },
   {
     "title": "Express Js",
-    "url": "https://youtu.be/0QRFOsrBtXw",
+    "url": "https://www.youtube.com/embed/0QRFOsrBtXw",
     "CourseCategoryId": 2,
     "CourseCategoryUserId": 3,
     "CourseCategoryCategoryId": 1
   }
 
 ]
+
+
+
+
