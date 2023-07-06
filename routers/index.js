@@ -32,6 +32,6 @@ router.get('/admin/delete/:id', admin, Controller.delete)
 router.get('/logout', admin, Controller.getLogOut)
 
 router.get('/user', user, (req, res) => res.render('User'))
-router.get('/logutUser', user, res.redirect('/'))
+router.get('/logutUser', user, (req,res)=> res.redirect('/'))
 
 module.exports = router;
