@@ -38,19 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    UserId:  {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        notEmpty: {
-          msg: `UserId is Require`
-        },
-        notNull: {
-          msg: `UserId is Require`
-        }
-      }
-    },
-    CategoryId: {
+    CourseCategoriId:  {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
