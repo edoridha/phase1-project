@@ -1,30 +1,162 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Add Art</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar{
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .nav-content{
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            width: 80%;
+            
+        }
+
+        button{
+            background-color: aliceblue;
+            margin: 0;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            margin-right: 20px;
+            margin-left: 20px;
+
+        }
+
+        button:hover{
+            background-color: rgb(123, 255, 0);
+        }
+
+        button.active, button.active a{
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .wrap{
+            display: block;
+            width: 100%;
+        }
+        h1, a{
+            text-decoration: none;
+            color: blueviolet;
+            display: block;
+            padding: 5px;
+            font-weight: bolder;
+            font-size: 1.5em;
+        }
+
+        .content{
+            display: flex;
+            justify-content: center;
+            
+        }
+        .container{
+            display: block;
+            width: 80%;
+
+        }
+        h1{
+            color: blueviolet;
+        }
+
+        .form{
+            display: block;
+        }
+        .form-item{
+            display: block;
+            margin-top:20px;
+            margin-left: 10px;
+            padding-top: 10px;
+            font-size: 18px;
+        }
+
+        .items{
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+
+        input{
+            width: 100%;
+        }
+
+        .items-btn {
+            margin-bottom: 100px;
+            width: 30%;
+            background-color: blueviolet;
+        }
+        .items-btn a{
+            color: white;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Registration Form</h1>
+    <div class="nav-bar">
+        <div class="nav-content">
+            <button class="active">
+                <a  href="/">Go Learn</a>
+            </button>
+            <button>
+                <a href="">Category</a>
+            </button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="warp">
+                    <h1>Registration Form</h1>
+                <div class="form">
+                    <form action="/register" method="post">
+                        <div class="form-item">
+                            <label class="items">First Name</label>
+                            <input class="items" type="text" name="firstName" >
+                        </div>
+                        <div class="form-item">
+                            <label class="items">Last Name</label>
+                            <input class="items" type="text" name="lastName" >
+                        </div>
+                        <div class="form-item">
+                            <label class="items">Age</label>
+                            <input class="items" type="number" name="age" >
+                        </div>
+                        <div class="form-item">
+                            <label class="items">Email</label>
+                            <input class="items" type="text" name="email" >
+                        </div>
+                        <div class="form-item">
+                            <label class="items">Password</label>
+                            <input class="items" type="password" name="password" >
+                        </div>
+                        <div class="form-item">
+                            <button class="items-btn" type="submit" value="Sign Up">
+                                <a>Register</a>
+                            </button>
+                        </div>
+                    </form>
 
-    <form action="/register" method="post">
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName">
-        <br><br>
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName">
-        <br><br>
-        <label for="age">Age</label>
-        <input type="number" name="age">
-        <br><br>
-        <label for="email">Email</label>
-        <input type="text" name="email">
-        <br><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" >
-        <br><br><br>
-        <input type="submit" value="Sign Up">
-    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
 </body>
 </html>
+    
