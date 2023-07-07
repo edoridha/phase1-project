@@ -1,7 +1,6 @@
 const { User, Profile, CourseCategory, Course, Category } = require('../models')
 const sendMail = require('../helper/send_email')
 const bcrypt = require('bcryptjs');
-const { where } = require('sequelize');
 
 class Controller {
 
@@ -115,12 +114,14 @@ class Controller {
             UserId:"5" //perlu dapet user email
             }})
             .then((data) => {
-            res.send(data)
+            res.render('Profile',{data})
             })
             .catch((err) => {
                 res.send(err)
             })
     }
+
+    
 
 }
 

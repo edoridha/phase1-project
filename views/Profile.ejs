@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Art</title>
+    <title>Home</title>
     <style>
         * {
             font-family: Arial, Helvetica, sans-serif;
@@ -27,7 +27,7 @@
         }
 
         button{
-            background-color: aliceblue;
+            background-color: rgb(255, 255, 255);
             margin: 0;
             border-radius: 5px;
             border: none;
@@ -45,10 +45,11 @@
             background-color: blueviolet;
             color: white;
         }
-
         .wrap{
             display: block;
-            width: 100%;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
         }
         h1, a{
             text-decoration: none;
@@ -60,17 +61,25 @@
         }
 
         .content{
-            display: flex;
-            justify-content: center;
-            
-        }
-        .container{
             display: block;
             width: 80%;
-
         }
-        h1{
-            color: blueviolet;
+        .container{
+            float: inline-start;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            
+        }
+
+        .items{
+            padding:20px;
+            margin: 5px;
+            transition: 0.3s;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1em;
+
         }
 
         .form{
@@ -81,32 +90,40 @@
             margin-top:20px;
             margin-left: 10px;
             padding-top: 10px;
-            font-size: 18px;
+            font-size: 1em;
+            
         }
 
-        .items{
-            margin-top: 10px;
+        .cont{
+            padding-top: 5px;
+        }
+
+        .card{
             padding: 5px;
         }
-
-
-        input{
-            width: 100%;
+        
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+        p, h4{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
-        .items-btn {
-            margin-bottom: 100px;
-            width: 30%;
-            background-color: blueviolet;
-        }
-        .items-btn a{
+        .items-btn{
             color: white;
+            width: 100%;
+            margin-bottom: 30px;
+            font-size: 1em;
+            font-weight: bolder;
+            background-color: blueviolet;
         }
 
     </style>
 </head>
 <body>
-   <div class="nav-bar">
+    <div class="nav-bar">
         <div class="nav-content">
             <button class="active">
                 <a  href="/">Go Learn</a>
@@ -116,27 +133,29 @@
             </button>
         </div>
     </div>
-    <div class="content">
-        <div class="container">
-            <div class="warp">
-                <h1>Landing Page</h1>
-                
-                        <div class="form-item">
-                            <button class="items-btn" type="submit" value="Login">
-                                <a href="/login">Login</a>
-                            </button>
-                            <button class="items-btn" type="submit" value="Login">
-                                <a href="/register">Sign Up</a>
-                            </button>
+    <div class="wrap">
+
+        <div class="content">
+            <div class="container">
+                    <div class="items">
+                        <div class="card">
+                            <img src="profile" alt="profile">
                         </div>
-
-                </div>
+                    </div>
+                    <div class="items">
+                        <h1 style="margin-left: 30px;">User Information</h1>
+                    </div>
+                    <div class="form">
+                        <h3><%= data.firstName %></h3>
+                    </div>
+                    <div class="form">
+                        <h3><%= data.lastName %></h3>
+                    </div>
+                    <div class="form">
+                        <h3><%= data.age %> years Old</h3>
+                    </div>
             </div>
-
         </div>
-
-
     </div>
 </body>
 </html>
-    

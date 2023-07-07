@@ -32,8 +32,7 @@ router.get('/admin/delete/:id', admin, Controller.delete)
 router.get('/logout', admin, Controller.getLogOut)
 
 router.get('/user', user, Controller.userHome)
-router.get('/user/profile', user, Controller.userProfile)
-router.get('/user', user, Controller.userHome)
+router.get('/profile', user, Controller.userProfile)
 
 router.get('/logutUser', user, (req,res)=> res.redirect('/'))
 
