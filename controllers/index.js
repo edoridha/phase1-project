@@ -1,6 +1,7 @@
 const { User, Profile, CourseCategory, Course, Category } = require('../models')
 const sendMail = require('../helper/send_email')
 const bcrypt = require('bcryptjs');
+const { where } = require('sequelize');
 
 class Controller {
 
@@ -97,9 +98,9 @@ class Controller {
 
     static userHome(req, res) {
         Course.findAll({
-            // include: Category
+            include: Category
         }).then((data) => {
-            // res.send(data)
+            data = JSON.parse(JSON.stringify(data))
             res.render('User',{data})
         }).catch((err) => {
             res.send(err)
