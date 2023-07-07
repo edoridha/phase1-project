@@ -156,13 +156,15 @@
         </div>
         <div class="search">
             <form class="container-s" action="/" method="get">
-                <input class="items-s" type="text" name="searchTitle" placeholder="Search By Title">
-                <input class="items-s" type="text" name="searchArtist" placeholder="Search By Artist">
+                <input class="items-s" type="text" name="searchTitle" placeholder="Search Title">
+                <input class="items-s" type="text" name="searchCategory" placeholder="Search Category">
                 <button style="width: 20%; background-color: blueviolet; color: white;">Search</button>
             </form>
         </div>
+        <div class="cont">
+            <button><a href="/logutUser">Log Out</a></button>                       
+        </div><br><br>
        
-        <button><a href="/logutUser">Log Out</a></button>
         <div class="content">
             <div class="container">
                 <% data.forEach(el => { %>
@@ -174,9 +176,7 @@
                             <div class="cont">
                                 <h1><b><%= el.title %></b></h1> 
                             </div>
-                            <div class="cont">
-                                
-                            </div>
+                            
                             <div class="cont">
                                 <button><a href=""></a></button>
                                 <button><a href=""></a></button>
